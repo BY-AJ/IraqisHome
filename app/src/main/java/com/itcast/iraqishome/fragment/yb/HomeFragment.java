@@ -61,7 +61,7 @@ public class HomeFragment extends BaseFragment{
         mIndexNavList = body.InnerData.IndexNav;
         //2.获取适配器
         mAdapter = new HomeAdapter(getFragmentManager(),mIndexNavList);
-        //3.设置适配器
+        //3.设置Viewpager适配器
         mViewPager.setAdapter(mAdapter);
         //4.设置tablayout与Viewpager同步
         mTabLayout.setupWithViewPager(mViewPager);

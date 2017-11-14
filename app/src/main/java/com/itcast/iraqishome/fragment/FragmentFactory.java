@@ -5,6 +5,9 @@ import com.itcast.iraqishome.fragment.yb.HomeFragment;
 import com.itcast.iraqishome.fragment.yb.ProductFragment;
 import com.itcast.iraqishome.fragment.yb.ShoppingCartFragment;
 import com.itcast.iraqishome.fragment.yb.StrollFragment;
+import com.itcast.iraqishome.fragment.yb.TabHomeFragment;
+import com.itcast.iraqishome.fragment.yb.TabProductFragment;
+import com.itcast.iraqishome.fragment.yb.TabWorkFragment;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,8 +17,10 @@ import java.util.Map;
  */
 
 public class FragmentFactory {
+    //保存MainActivity中的ViewPager中fragment
     private static Map<Integer,BaseFragment> mMainFragmentMap = new HashMap<>();
 
+    //保存HomeFragment中的ViewPager中fragment
     private static Map<Integer,BaseFragment> mHomeFragmentMap = new HashMap<>();
 
     public static BaseFragment createMainFragment(int pos) {
@@ -50,13 +55,13 @@ public class FragmentFactory {
         if(fragment == null) {
             switch (pos) {
                 case 0:
-                    fragment = new HomeFragment();
+                    fragment = new TabHomeFragment();
                     break;
                 case 1:
-                    fragment = new ProductFragment();
+                    fragment = new TabProductFragment();
                     break;
                 case 2:
-                    fragment = new StrollFragment();
+                    fragment = new TabWorkFragment();
                     break;
                 case 3:
                     fragment = new ShoppingCartFragment();
