@@ -1,8 +1,12 @@
 package com.itcast.iraqishome.fragment.yb;
 
+import android.view.LayoutInflater;
 import android.view.View;
 
+import com.itcast.iraqishome.R;
 import com.itcast.iraqishome.fragment.BaseFragment;
+
+import butterknife.ButterKnife;
 
 /**
  * Tablayout-----首页
@@ -12,7 +16,9 @@ import com.itcast.iraqishome.fragment.BaseFragment;
 public class TabHomeFragment extends BaseFragment{
     @Override
     public View initView() {
-        return null;
+        View view = LayoutInflater.from(mActivity).inflate(R.layout.fragment_tabhome, null);
+        ButterKnife.bind(this,view);
+        return view;
     }
 
     @Override
