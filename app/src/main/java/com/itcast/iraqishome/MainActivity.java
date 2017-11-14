@@ -1,9 +1,10 @@
 package com.itcast.iraqishome;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.itcast.iraqishome.activity.BaseActivity;
+
+public class MainActivity extends BaseActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
