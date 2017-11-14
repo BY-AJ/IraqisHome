@@ -27,11 +27,11 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     }
 
     private void initData() {
-        //设置适配器
+        //1.设置适配器
         mViewPager.setAdapter(new MainAdapter(getSupportFragmentManager()));
-        //设置Radiogruop监听器
+        //2.设置Radiogruop监听器
         mRadioGroup.setOnCheckedChangeListener(this);
-        //设置默认第一个RadioButton选中
+        //3.设置默认第一个RadioButton选中
         mRadioGroup.check(mRbIds[0]);
     }
 

@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.itcast.iraqishome.fragment.BaseFragment;
 
 /**
+ * 全部产品
  * Created by yb on 2017/11/14.
  */
 

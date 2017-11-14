@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.itcast.iraqishome.fragment.BaseFragment;
 
 /**
+ * 购物车
  * Created by yb on 2017/11/14.
  */
 
