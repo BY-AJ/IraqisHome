@@ -23,6 +23,10 @@ public class TabHomeFragment extends BaseFragment{
 
     @Override
     public void initData() {
+        getDataForServer();
+    }
+
+    private void getDataForServer() {
 
     }
 }
