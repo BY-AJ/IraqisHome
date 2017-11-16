@@ -1,5 +1,7 @@
 package com.itcast.iraqishome.net;
 
+import com.itcast.iraqishome.bean.yb.TabHomeBean;
+import com.itcast.iraqishome.bean.yb.TabProductBean;
 import com.itcast.iraqishome.bean.yb.TablayoutBean;
 
 import okhttp3.OkHttpClient;
@@ -25,5 +27,25 @@ public class RequestNetwork {
                 .build();
         TablayoutClient client = retrofit.create(TablayoutClient.class);
         return client.getDataForserver();
+    }
+
+    public static Call<TabHomeBean> getTabHomeClient(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(APP_URL)
+                .addConverterFactory(gsonConverterFactory)
+                .client(httpClient.build())
+                .build();
+        TabHomeClient client = retrofit.create(TabHomeClient.class);
+        return client.getDataForServer();
+    }
+
+    public static Call<TabProductBean> getTabProductClient(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(APP_URL)
+                .addConverterFactory(gsonConverterFactory)
+                .client(httpClient.build())
+                .build();
+        TabProductClient client = retrofit.create(TabProductClient.class);
+        return client.getDataForServer();
     }
 }

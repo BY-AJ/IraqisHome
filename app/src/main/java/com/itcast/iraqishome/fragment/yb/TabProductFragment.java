@@ -1,8 +1,24 @@
 package com.itcast.iraqishome.fragment.yb;
 
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 
+import com.itcast.iraqishome.R;
+import com.itcast.iraqishome.adapter.yb.TabProductRecycAdapter;
+import com.itcast.iraqishome.bean.yb.TabProductBean;
 import com.itcast.iraqishome.fragment.BaseFragment;
+import com.itcast.iraqishome.net.RequestNetwork;
+import com.orhanobut.logger.Logger;
+
+import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Tablayout-----新品
@@ -10,13 +26,42 @@ import com.itcast.iraqishome.fragment.BaseFragment;
  */
 
 public class TabProductFragment extends BaseFragment{
+    @BindView(R.id.recycler_tabproduct) RecyclerView mRecyclerView;
+    private ArrayList<TabProductBean.EntityInfo> mDatas;
+    private TabProductRecycAdapter mAdapter;
+
     @Override
     public View initView() {
-        return null;
+        View view = LayoutInflater.from(mActivity).inflate(R.layout.fragment_tabproduct, null);
+        initBacis(view);
+        return view;
+    }
+
+    private void initBacis(View view) {
+        ButterKnife.bind(this,view);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(mActivity);
+        mRecyclerView.setLayoutManager(layoutManager);
     }
 
     @Override
     public void initData() {
+        Call<TabProductBean> call = RequestNetwork.getTabProductClient();
+        call.enqueue(new Callback<TabProductBean>() {
+            @Override
+            public void onResponse(Call<TabProductBean> call, Response<TabProductBean> response) {
+                parseData(response.body());
+            }
+            @Override
+            public void onFailure(Call<TabProductBean> call, Throwable t) {
+                Logger.d(t.getMessage());
+            }
+        });
+    }
 
+    private void parseData(TabProductBean body) {
+        Logger.d(body.InnerData.size()+"....");
+        mDatas = body.InnerData;
+        mAdapter = new TabProductRecycAdapter(mDatas);
+        mRecyclerView.setAdapter(mAdapter);
     }
 }
