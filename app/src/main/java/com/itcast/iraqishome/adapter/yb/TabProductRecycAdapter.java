@@ -34,16 +34,19 @@ public class TabProductRecycAdapter extends BaseQuickAdapter<TabProductBean.Enti
         Glide.with(helper.itemView.getContext())
                 .load(ConstantUtil.IMAGE_BAISC + item.ImageUrl)
                 .into(ivIcon);
-        TextView tvSalePrice = (TextView )helper.itemView.findViewById(R.id.tv_tabpro_sale_price);
+
         if(item.ActivityPrice == 0) {
             helper.setVisible(R.id.tv_tavpro_flag,false);
             helper.setVisible(R.id.tv_tabpro_flag_price,false);
+            TextView tvSalePrice = (TextView )helper.itemView.findViewById(R.id.tv_tabpro_sale_price);
             tvSalePrice.setText("￥ "+item.SalePrice);
+            tvSalePrice.getPaint().setFlags(0);
             tvSalePrice.setTextColor(Color.parseColor("#000000"));
         }else {
             helper.setVisible(R.id.tv_tavpro_flag,true);
             helper.setVisible(R.id.tv_tabpro_flag_price,true);
             helper.setText(R.id.tv_tabpro_flag_price,"￥ "+item.ActivityPrice);
+            TextView tvSalePrice = (TextView )helper.itemView.findViewById(R.id.tv_tabpro_sale_price);
             tvSalePrice.setText("￥ "+item.SalePrice);
             //文字中间加横线
             tvSalePrice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
