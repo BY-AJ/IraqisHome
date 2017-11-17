@@ -2,6 +2,7 @@ package com.itcast.iraqishome.net;
 
 import com.itcast.iraqishome.bean.yb.TabHomeBean;
 import com.itcast.iraqishome.bean.yb.TabProductBean;
+import com.itcast.iraqishome.bean.yb.TabWorkBean;
 import com.itcast.iraqishome.bean.yb.TablayoutBean;
 
 import okhttp3.OkHttpClient;
@@ -47,5 +48,15 @@ public class RequestNetwork {
                 .build();
         TabProductClient client = retrofit.create(TabProductClient.class);
         return client.getDataForServer();
+    }
+
+    public static Call<TabWorkBean> getTabWorkClient(int id){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(APP_URL)
+                .addConverterFactory(gsonConverterFactory)
+                .client(httpClient.build())
+                .build();
+        TabWorkClient client = retrofit.create(TabWorkClient.class);
+        return client.getDataForServer(id);
     }
 }

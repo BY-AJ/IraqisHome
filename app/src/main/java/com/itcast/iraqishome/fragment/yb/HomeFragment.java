@@ -67,5 +67,7 @@ public class HomeFragment extends BaseFragment{
         mTabLayout.setupWithViewPager(mViewPager);
         //5.设置tablayout的标题来源于Viewpager
         mTabLayout.setTabsFromPagerAdapter(mAdapter);
+        //6.设置缓存页数
+        mViewPager.setOffscreenPageLimit(mIndexNavList.size());
     }
 }

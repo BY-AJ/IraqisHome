@@ -50,7 +50,7 @@ public class FragmentFactory {
         return fragment;
     }
 
-    public static BaseFragment createHomeFragment(int pos) {
+    public static BaseFragment createHomeFragment(int pos, int id) {
         BaseFragment fragment = mHomeFragmentMap.get(pos);
         if(fragment == null) {
             switch (pos) {
@@ -61,7 +61,7 @@ public class FragmentFactory {
                     fragment = new TabProductFragment();
                     break;
                 case 2:
-                    fragment = new TabWorkFragment();
+                    fragment = new TabWorkFragment(id);
                     break;
                 case 3:
                     fragment = new ShoppingCartFragment();
