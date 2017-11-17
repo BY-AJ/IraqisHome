@@ -84,21 +84,21 @@ public class TabWorkFragment extends BaseFragment{
 
     private void parseData(TabWorkBean body) {
         Logger.d(body.InnerData.Categories.size()+"..."+body.Message+"..."+body.Result);
-        //获取头recycler要加载的数据集合
+        //1.获取头recycler要加载的数据集合
         mCategoryDatas = body.InnerData.Categories;
-        //获取尾recycler要加载的数据集合
+        //2.获取尾recycler要加载的数据集合
         mCeoRecommendDatas = body.InnerData.CEORecommends;
-        //获取尾recycler的标题数据
+        //3.获取尾recycler的标题数据
         mCeoRecommendTitle = body.InnerData.CEORecommendTitle;
 
-        //设置头recycler适配器
+        //4.设置头recycler适配器
         mHeaderAdapter = new TabWorkHeaderRecycAdapter(mCategoryDatas);
         mRecyclerHeader.setAdapter(mHeaderAdapter);
-        //设置尾recycler适配器
+        //5.设置尾recycler适配器
         List<FrontSectionEntity> mEntityList = new ArrayList<>();
-        //设置分组头
+        //5.1设置分组头标题
         mEntityList.add(new FrontSectionEntity(true,mCeoRecommendTitle.Text));
-        //添加条目数据
+        //5.2添加条目数据
         for (int i=0 ;i<mCeoRecommendDatas.size();i++) {
             FrontSectionBean bean = new FrontSectionBean();
             bean.ActivityPrice = mCeoRecommendDatas.get(i).ActivityPrice;
