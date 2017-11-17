@@ -5,11 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.itcast.iraqishome.R;
-import com.itcast.iraqishome.adapter.yb.HomeAdapter;
-import com.itcast.iraqishome.bean.yb.TablayoutBean;
+import com.itcast.iraqishome.adapter.HomeAdapter;
+import com.itcast.iraqishome.bean.TablayoutBean;
 import com.itcast.iraqishome.fragment.BaseFragment;
 import com.itcast.iraqishome.net.RequestNetwork;
-import com.itcast.iraqishome.view.yb.NoScrollViewPager;
+import com.itcast.iraqishome.view.NoScrollViewPager;
 import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;

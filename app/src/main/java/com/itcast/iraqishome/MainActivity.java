@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.widget.RadioGroup;
 
 import com.itcast.iraqishome.activity.BaseActivity;
-import com.itcast.iraqishome.adapter.yb.MainAdapter;
-import com.itcast.iraqishome.view.yb.NoScrollViewPager;
+import com.itcast.iraqishome.adapter.MainAdapter;
+import com.itcast.iraqishome.view.NoScrollViewPager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

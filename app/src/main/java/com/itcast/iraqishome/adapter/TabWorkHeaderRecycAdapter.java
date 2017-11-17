@@ -1,4 +1,4 @@
-package com.itcast.iraqishome.adapter.yb;
+package com.itcast.iraqishome.adapter;
 
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
@@ -7,8 +7,8 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.itcast.iraqishome.R;
-import com.itcast.iraqishome.bean.yb.TabWorkBean;
-import com.itcast.iraqishome.utills.yb.ConstantUtil;
+import com.itcast.iraqishome.bean.TabWorkBean;
+import com.itcast.iraqishome.utills.ConstantUtil;
 
 import java.util.List;
 

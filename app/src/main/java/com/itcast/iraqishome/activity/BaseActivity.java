@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.itcast.iraqishome.utills.yb.ActivityCollector;
+import com.itcast.iraqishome.utills.ActivityCollector;
 import com.orhanobut.logger.Logger;
 
 /**

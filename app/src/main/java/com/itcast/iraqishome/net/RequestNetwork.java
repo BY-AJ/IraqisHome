@@ -1,9 +1,9 @@
 package com.itcast.iraqishome.net;
 
-import com.itcast.iraqishome.bean.yb.TabHomeBean;
-import com.itcast.iraqishome.bean.yb.TabProductBean;
-import com.itcast.iraqishome.bean.yb.TabWorkBean;
-import com.itcast.iraqishome.bean.yb.TablayoutBean;
+import com.itcast.iraqishome.bean.TabHomeBean;
+import com.itcast.iraqishome.bean.TabProductBean;
+import com.itcast.iraqishome.bean.TabWorkBean;
+import com.itcast.iraqishome.bean.TablayoutBean;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;

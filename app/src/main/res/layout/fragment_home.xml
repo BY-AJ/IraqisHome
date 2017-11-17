@@ -17,7 +17,7 @@
         app:tabMode="scrollable"
         />
 
-    <com.itcast.iraqishome.view.yb.NoScrollViewPager
+    <com.itcast.iraqishome.view.NoScrollViewPager
         android:id="@+id/viewpager_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

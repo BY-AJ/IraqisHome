@@ -1,4 +1,4 @@
-package com.itcast.iraqishome.utills.yb;
+package com.itcast.iraqishome.utills;
 
 /**
  * Created by yb on 2017/11/15.

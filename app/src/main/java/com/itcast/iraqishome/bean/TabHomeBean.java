@@ -1,4 +1,4 @@
-package com.itcast.iraqishome.bean.yb;
+package com.itcast.iraqishome.bean;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

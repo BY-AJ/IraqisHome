@@ -1,6 +1,6 @@
 package com.itcast.iraqishome.net;
 
-import com.itcast.iraqishome.bean.yb.TabWorkBean;
+import com.itcast.iraqishome.bean.TabWorkBean;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

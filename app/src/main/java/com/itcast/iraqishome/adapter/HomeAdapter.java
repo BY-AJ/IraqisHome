@@ -1,10 +1,10 @@
-package com.itcast.iraqishome.adapter.yb;
+package com.itcast.iraqishome.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.itcast.iraqishome.bean.yb.TablayoutBean;
+import com.itcast.iraqishome.bean.TablayoutBean;
 import com.itcast.iraqishome.fragment.BaseFragment;
 import com.itcast.iraqishome.fragment.FragmentFactory;
 

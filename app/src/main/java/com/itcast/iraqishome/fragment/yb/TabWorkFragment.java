@@ -8,8 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.itcast.iraqishome.R;
-import com.itcast.iraqishome.adapter.yb.TabWorkHeaderRecycAdapter;
-import com.itcast.iraqishome.bean.yb.TabWorkBean;
+import com.itcast.iraqishome.adapter.TabWorkHeaderRecycAdapter;
+import com.itcast.iraqishome.bean.TabWorkBean;
 import com.itcast.iraqishome.fragment.BaseFragment;
 import com.itcast.iraqishome.net.RequestNetwork;
 import com.orhanobut.logger.Logger;

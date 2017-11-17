@@ -1,4 +1,4 @@
-package com.itcast.iraqishome.adapter.yb;
+package com.itcast.iraqishome.adapter;
 
 import android.support.v4.view.PagerAdapter;
 import android.view.View;

@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.itcast.iraqishome.R;
-import com.itcast.iraqishome.bean.yb.TabHomeBean;
+import com.itcast.iraqishome.bean.TabHomeBean;
 import com.itcast.iraqishome.fragment.BaseFragment;
 import com.itcast.iraqishome.net.RequestNetwork;
 import com.orhanobut.logger.Logger;

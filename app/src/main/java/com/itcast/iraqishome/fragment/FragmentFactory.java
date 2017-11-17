@@ -1,10 +1,6 @@
 package com.itcast.iraqishome.fragment;
 
-import com.itcast.iraqishome.fragment.yb.CenterFragment;
 import com.itcast.iraqishome.fragment.yb.HomeFragment;
-import com.itcast.iraqishome.fragment.yb.ProductFragment;
-import com.itcast.iraqishome.fragment.yb.ShoppingCartFragment;
-import com.itcast.iraqishome.fragment.yb.StrollFragment;
 import com.itcast.iraqishome.fragment.yb.TabHomeFragment;
 import com.itcast.iraqishome.fragment.yb.TabProductFragment;
 import com.itcast.iraqishome.fragment.yb.TabWorkFragment;
