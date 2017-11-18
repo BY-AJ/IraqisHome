@@ -19,7 +19,7 @@ import java.util.List;
  * Created by yb on 2017/11/17.
  */
 
-public class TabWorkFrontRecycAdapter extends BaseSectionQuickAdapter<FrontSectionEntity,BaseViewHolder> {
+public class TabFrontRecycAdapter extends BaseSectionQuickAdapter<FrontSectionEntity,BaseViewHolder> {
 
     /**
      * Same as QuickAdapter#QuickAdapter(Context,int) but with
@@ -29,7 +29,7 @@ public class TabWorkFrontRecycAdapter extends BaseSectionQuickAdapter<FrontSecti
      * @param sectionHeadResId The section head layout id for each item
      * @param data             A new list is created out of this one to avoid mutable list
      */
-    public TabWorkFrontRecycAdapter(int layoutResId, int sectionHeadResId, List<FrontSectionEntity> data) {
+    public TabFrontRecycAdapter(int layoutResId, int sectionHeadResId, List<FrontSectionEntity> data) {
         super(layoutResId, sectionHeadResId, data);
     }
 

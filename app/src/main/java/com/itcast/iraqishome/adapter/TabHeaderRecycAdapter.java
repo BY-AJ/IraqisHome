@@ -16,10 +16,10 @@ import java.util.List;
  * Created by yb on 2017/11/17.
  */
 
-public class TabWorkHeaderRecycAdapter extends BaseQuickAdapter<TabWorkBean.CategoryInfo,BaseViewHolder>{
+public class TabHeaderRecycAdapter extends BaseQuickAdapter<TabWorkBean.CategoryInfo,BaseViewHolder>{
 
-    public TabWorkHeaderRecycAdapter(@Nullable List<TabWorkBean.CategoryInfo> data) {
-        super(R.layout.recycler_item_tabwork_header,data);
+    public TabHeaderRecycAdapter(@Nullable List<TabWorkBean.CategoryInfo> data) {
+        super(R.layout.recycler_item_header,data);
     }
 
     @Override

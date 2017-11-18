@@ -1,6 +1,7 @@
 package com.itcast.iraqishome.fragment;
 
 import com.itcast.iraqishome.fragment.yb.HomeFragment;
+import com.itcast.iraqishome.fragment.yb.TabCookFragment;
 import com.itcast.iraqishome.fragment.yb.TabHomeFragment;
 import com.itcast.iraqishome.fragment.yb.TabProductFragment;
 import com.itcast.iraqishome.fragment.yb.TabWorkFragment;
@@ -60,7 +61,7 @@ public class FragmentFactory {
                     fragment = new TabWorkFragment(id);
                     break;
                 case 3:
-                    fragment = new ShoppingCartFragment();
+                    fragment = new TabCookFragment(id);
                     break;
                 case 4:
                     fragment = new CenterFragment();

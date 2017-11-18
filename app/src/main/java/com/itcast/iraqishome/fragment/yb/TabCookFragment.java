@@ -27,12 +27,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Tablayout-----家务
- * Created by yb on 2017/11/14.
+ * Created by yb on 2017/11/18.
  */
 
 @SuppressLint("ValidFragment")
-public class TabWorkFragment extends BaseFragment{
+public class TabCookFragment extends BaseFragment{
 
     @BindView(R.id.recycler_header) RecyclerView mRecyclerHeader;
     @BindView(R.id.recycler_front) RecyclerView mRecyclerFront;
@@ -44,14 +43,14 @@ public class TabWorkFragment extends BaseFragment{
     private TabWorkBean.CEORecommend mCeoRecommendTitle;
     private TabFrontRecycAdapter mFrontAdapter;
 
-    public TabWorkFragment(int id) {
+    public TabCookFragment(int id) {
         super();
         mItemIndexId = id;
     }
 
     @Override
     public View initView() {
-        View view = LayoutInflater.from(mActivity).inflate(R.layout.fragment_tabwork, null);
+        View view = LayoutInflater.from(mActivity).inflate(R.layout.fragment_tabcook, null);
         initBasic(view);
         return view;
     }
@@ -64,7 +63,6 @@ public class TabWorkFragment extends BaseFragment{
 
         LinearLayoutManager frontManager = new LinearLayoutManager(mActivity);
         mRecyclerFront.setLayoutManager(frontManager);
-
     }
 
     @Override
