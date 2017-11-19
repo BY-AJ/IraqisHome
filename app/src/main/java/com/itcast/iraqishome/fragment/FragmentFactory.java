@@ -1,8 +1,10 @@
 package com.itcast.iraqishome.fragment;
 
+import com.itcast.iraqishome.bean.TablayoutBean;
 import com.itcast.iraqishome.fragment.yb.HomeFragment;
 import com.itcast.iraqishome.fragment.yb.TabBeddingFragment;
 import com.itcast.iraqishome.fragment.yb.TabCookFragment;
+import com.itcast.iraqishome.fragment.yb.TabGraspFragment;
 import com.itcast.iraqishome.fragment.yb.TabHomeFragment;
 import com.itcast.iraqishome.fragment.yb.TabLifeFragment;
 import com.itcast.iraqishome.fragment.yb.TabProductFragment;
@@ -51,7 +53,7 @@ public class FragmentFactory {
         return fragment;
     }
 
-    public static BaseFragment createHomeFragment(int pos, int id) {
+    public static BaseFragment createHomeFragment(int pos, TablayoutBean.EntityInfo info) {
         BaseFragment fragment = mHomeFragmentMap.get(pos);
         if(fragment == null) {
             switch (pos) {
@@ -62,25 +64,25 @@ public class FragmentFactory {
                     fragment = new TabProductFragment();
                     break;
                 case 2:
-                    fragment = new TabWorkFragment(id);
+                    fragment = new TabWorkFragment(info.ItemIndexId);
                     break;
                 case 3:
-                    fragment = new TabCookFragment(id);
+                    fragment = new TabCookFragment(info.ItemIndexId);
                     break;
                 case 4:
-                    fragment = new TabLifeFragment(id);
+                    fragment = new TabLifeFragment(info.ItemIndexId);
                     break;
                 case 5:
-                    fragment = new TabSuitFragment(id);
+                    fragment = new TabSuitFragment(info.ItemIndexId);
                     break;
                 case 6:
-                    fragment = new TabBeddingFragment(id);
+                    fragment = new TabBeddingFragment(info.ItemIndexId);
                     break;
                 case 7:
-                    fragment = new TabWashFragment(id);
+                    fragment = new TabWashFragment(info.ItemIndexId);
                     break;
                 case 8:
-                    fragment = new CenterFragment();
+                    fragment = new TabGraspFragment(info.Uri,info.Name);
                     break;
                 default:
                     break;

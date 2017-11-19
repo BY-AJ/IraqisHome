@@ -20,5 +20,6 @@ public class TablayoutBean {
         public String Code;
         public String Name;
         public int ItemIndexId;
+        public String Uri;
     }
 }

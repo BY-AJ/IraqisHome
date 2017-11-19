@@ -25,7 +25,7 @@ public class HomeAdapter extends FragmentPagerAdapter{
 
     @Override
     public Fragment getItem(int position) {
-        BaseFragment fragment = FragmentFactory.createHomeFragment(position,mIndexNavList.get(position).ItemIndexId);
+        BaseFragment fragment = FragmentFactory.createHomeFragment(position,mIndexNavList.get(position));
         return fragment;
     }
 
