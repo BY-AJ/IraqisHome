@@ -1,10 +1,13 @@
 package com.itcast.iraqishome.fragment;
 
 import com.itcast.iraqishome.fragment.yb.HomeFragment;
+import com.itcast.iraqishome.fragment.yb.TabBeddingFragment;
 import com.itcast.iraqishome.fragment.yb.TabCookFragment;
 import com.itcast.iraqishome.fragment.yb.TabHomeFragment;
 import com.itcast.iraqishome.fragment.yb.TabLifeFragment;
 import com.itcast.iraqishome.fragment.yb.TabProductFragment;
+import com.itcast.iraqishome.fragment.yb.TabSuitFragment;
+import com.itcast.iraqishome.fragment.yb.TabWashFragment;
 import com.itcast.iraqishome.fragment.yb.TabWorkFragment;
 
 import java.util.HashMap;
@@ -68,13 +71,13 @@ public class FragmentFactory {
                     fragment = new TabLifeFragment(id);
                     break;
                 case 5:
-                    fragment = new ProductFragment();
+                    fragment = new TabSuitFragment(id);
                     break;
                 case 6:
-                    fragment = new StrollFragment();
+                    fragment = new TabBeddingFragment(id);
                     break;
                 case 7:
-                    fragment = new ShoppingCartFragment();
+                    fragment = new TabWashFragment(id);
                     break;
                 case 8:
                     fragment = new CenterFragment();
