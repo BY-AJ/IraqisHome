@@ -77,6 +77,7 @@ public class HomeFragment extends BaseFragment{
 
         mCount = mTabLayout.getTabCount();
         Logger.d("tab个数:"+mCount);
+        //8给TabLayout最后一个Tab设置独立的点击事件
         for (int i=0;i<mCount;i++) {
             if(i == mCount -1) {
                 //获取最后一个tab
