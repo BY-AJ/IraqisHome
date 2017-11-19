@@ -82,7 +82,7 @@ public class FragmentFactory {
                     fragment = new TabWashFragment(info.ItemIndexId);
                     break;
                 case 8:
-                    fragment = new TabGraspFragment(info.Uri,info.Name);
+                    fragment = new TabGraspFragment();
                     break;
                 default:
                     break;
