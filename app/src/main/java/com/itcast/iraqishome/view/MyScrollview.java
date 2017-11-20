@@ -15,13 +15,11 @@ public class MyScrollview extends ScrollView{
     private int downY;
     private int mTouchSlop;
     public MyScrollview(Context context) {
-        super(context);
-        mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+        this(context,null);
     }
 
     public MyScrollview(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+        this(context, attrs,-1);
      }
 
      public MyScrollview(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -42,8 +40,6 @@ public class MyScrollview extends ScrollView{
                 if (Math.abs(moveY - downY) > mTouchSlop) {
                     return true;
                 }
-            default:
-                break;
         }
         return super.onInterceptTouchEvent(e);
     }
