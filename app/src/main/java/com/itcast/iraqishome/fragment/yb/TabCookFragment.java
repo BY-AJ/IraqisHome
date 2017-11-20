@@ -15,6 +15,8 @@ import com.itcast.iraqishome.adapter.entity.FrontSectionEntity;
 import com.itcast.iraqishome.bean.TabWorkBean;
 import com.itcast.iraqishome.fragment.BaseFragment;
 import com.itcast.iraqishome.net.RequestNetwork;
+import com.itcast.iraqishome.utills.FullyGridLayoutManager;
+import com.itcast.iraqishome.utills.FullyLinearLayoutManager;
 import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
@@ -58,10 +60,10 @@ public class TabCookFragment extends BaseFragment{
     private void initBasic(View view) {
         ButterKnife.bind(this,view);
 
-        GridLayoutManager headerManager = new GridLayoutManager(mActivity, 4);
+        GridLayoutManager headerManager = new FullyGridLayoutManager(mActivity,4,GridLayoutManager.VERTICAL,true);
         mRecyclerHeader.setLayoutManager(headerManager);
 
-        LinearLayoutManager frontManager = new LinearLayoutManager(mActivity);
+        FullyLinearLayoutManager frontManager = new FullyLinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL,true);
         mRecyclerFront.setLayoutManager(frontManager);
     }
 

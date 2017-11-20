@@ -16,6 +16,8 @@ import com.itcast.iraqishome.adapter.entity.FrontSectionEntity;
 import com.itcast.iraqishome.bean.TabWorkBean;
 import com.itcast.iraqishome.fragment.BaseFragment;
 import com.itcast.iraqishome.net.RequestNetwork;
+import com.itcast.iraqishome.utills.FullyGridLayoutManager;
+import com.itcast.iraqishome.utills.FullyLinearLayoutManager;
 import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
@@ -67,10 +69,10 @@ public class TabLifeFragment extends BaseFragment{
         tvBasicDes.setText("总被忙碌的工作冲淡了热情，觉得生活中没有乐趣？尝试为家做点小改变，" +
                 "让家成为你更喜欢的样子；亦或收拾行囊随时出发，不用走太远，风景就在眼前。");
 
-        GridLayoutManager headerManager = new GridLayoutManager(mActivity, 4);
+        GridLayoutManager headerManager = new FullyGridLayoutManager(mActivity,4,GridLayoutManager.VERTICAL,true);
         mRecyclerHeader.setLayoutManager(headerManager);
 
-        LinearLayoutManager frontManager = new LinearLayoutManager(mActivity);
+        FullyLinearLayoutManager frontManager = new FullyLinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL,true);
         mRecyclerFront.setLayoutManager(frontManager);
 
     }

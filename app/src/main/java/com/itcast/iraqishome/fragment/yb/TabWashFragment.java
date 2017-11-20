@@ -16,6 +16,8 @@ import com.itcast.iraqishome.adapter.entity.FrontSectionEntity;
 import com.itcast.iraqishome.bean.TabWorkBean;
 import com.itcast.iraqishome.fragment.BaseFragment;
 import com.itcast.iraqishome.net.RequestNetwork;
+import com.itcast.iraqishome.utills.FullyGridLayoutManager;
+import com.itcast.iraqishome.utills.FullyLinearLayoutManager;
 import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
@@ -67,12 +69,11 @@ public class TabWashFragment extends BaseFragment{
         tvBasicDes.setText("学习、工作，每天都觉得疲惫不堪，是时候让自己" +
                 "放松一会儿了！洗个澡、敷个面膜、享受按摩......放松下来，生活其实很美好。");
 
-        GridLayoutManager headerManager = new GridLayoutManager(mActivity, 4);
+        GridLayoutManager headerManager = new FullyGridLayoutManager(mActivity,4,GridLayoutManager.VERTICAL,true);
         mRecyclerHeader.setLayoutManager(headerManager);
 
-        LinearLayoutManager frontManager = new LinearLayoutManager(mActivity);
+        FullyLinearLayoutManager frontManager = new FullyLinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL,true);
         mRecyclerFront.setLayoutManager(frontManager);
-
     }
 
     @Override

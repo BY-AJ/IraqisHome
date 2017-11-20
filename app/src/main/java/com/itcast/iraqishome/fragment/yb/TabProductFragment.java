@@ -40,6 +40,7 @@ public class TabProductFragment extends BaseFragment{
     private void initBacis(View view) {
         ButterKnife.bind(this,view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(mActivity);
+        //FullyLinearLayoutManager layoutManager = new FullyLinearLayoutManager(mActivity);
         mRecyclerView.setLayoutManager(layoutManager);
     }
 

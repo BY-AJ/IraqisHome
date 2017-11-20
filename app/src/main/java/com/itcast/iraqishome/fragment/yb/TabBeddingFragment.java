@@ -16,6 +16,8 @@ import com.itcast.iraqishome.adapter.entity.FrontSectionEntity;
 import com.itcast.iraqishome.bean.TabWorkBean;
 import com.itcast.iraqishome.fragment.BaseFragment;
 import com.itcast.iraqishome.net.RequestNetwork;
+import com.itcast.iraqishome.utills.FullyGridLayoutManager;
+import com.itcast.iraqishome.utills.FullyLinearLayoutManager;
 import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
@@ -67,12 +69,11 @@ public class TabBeddingFragment extends BaseFragment{
         tvBasicDes.setText("每天睡十个小时，却依旧觉得疲惫不堪？总觉得枕头高了、床垫太软了、被子" +
                 "不舒服？别再将就你的睡眠了！我们为你准备了各式各样的床品，总有一款能帮你一夜好梦！");
 
-        GridLayoutManager headerManager = new GridLayoutManager(mActivity, 4);
+        GridLayoutManager headerManager = new FullyGridLayoutManager(mActivity,4,GridLayoutManager.VERTICAL,true);
         mRecyclerHeader.setLayoutManager(headerManager);
 
-        LinearLayoutManager frontManager = new LinearLayoutManager(mActivity);
+        FullyLinearLayoutManager frontManager = new FullyLinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL,true);
         mRecyclerFront.setLayoutManager(frontManager);
-
     }
 
     @Override
