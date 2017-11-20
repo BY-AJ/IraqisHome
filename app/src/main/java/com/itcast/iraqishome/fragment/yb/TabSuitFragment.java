@@ -16,8 +16,6 @@ import com.itcast.iraqishome.adapter.entity.FrontSectionEntity;
 import com.itcast.iraqishome.bean.TabWorkBean;
 import com.itcast.iraqishome.fragment.BaseFragment;
 import com.itcast.iraqishome.net.RequestNetwork;
-import com.itcast.iraqishome.utills.FullyGridLayoutManager;
-import com.itcast.iraqishome.utills.FullyLinearLayoutManager;
 import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
@@ -69,10 +67,15 @@ public class TabSuitFragment extends BaseFragment{
         tvBasicDes.setText("夏天它要清爽透气、冬天它要舒适、" +
                 "甚至还有时候还要和它一起出个门，所以这件每天和你肌肤相亲的衣服一定要精心挑选！");
 
-        GridLayoutManager headerManager = new FullyGridLayoutManager(mActivity,4,GridLayoutManager.VERTICAL,true);
+//        GridLayoutManager headerManager = new FullyGridLayoutManager(mActivity,4,GridLayoutManager.VERTICAL,true);
+//        mRecyclerHeader.setLayoutManager(headerManager);
+//
+//        FullyLinearLayoutManager frontManager = new FullyLinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL,true);
+//        mRecyclerFront.setLayoutManager(frontManager);
+        GridLayoutManager headerManager = new GridLayoutManager(mActivity,4);
         mRecyclerHeader.setLayoutManager(headerManager);
 
-        FullyLinearLayoutManager frontManager = new FullyLinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL,true);
+        LinearLayoutManager frontManager = new LinearLayoutManager(mActivity);
         mRecyclerFront.setLayoutManager(frontManager);
     }
 
