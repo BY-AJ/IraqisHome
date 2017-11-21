@@ -1,5 +1,6 @@
 package com.itcast.iraqishome.net;
 
+import com.itcast.iraqishome.bean.GoodsDetailBean;
 import com.itcast.iraqishome.bean.TabHomeBean;
 import com.itcast.iraqishome.bean.TabProductBean;
 import com.itcast.iraqishome.bean.TabWorkBean;
@@ -57,6 +58,16 @@ public class RequestNetwork {
                 .client(httpClient.build())
                 .build();
         TabWorkClient client = retrofit.create(TabWorkClient.class);
+        return client.getDataForServer(id);
+    }
+
+    public static Call<GoodsDetailBean> getGoodsDetailClient(int id){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(APP_URL)
+                .addConverterFactory(gsonConverterFactory)
+                .client(httpClient.build())
+                .build();
+        GoodsDetailClient client = retrofit.create(GoodsDetailClient.class);
         return client.getDataForServer(id);
     }
 }
