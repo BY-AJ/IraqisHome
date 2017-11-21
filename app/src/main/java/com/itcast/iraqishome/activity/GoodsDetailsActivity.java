@@ -80,7 +80,7 @@ public class GoodsDetailsActivity extends BaseActivity{
         tvGoodsHeaderAppeal.setText(mInnerDatas.Caption);//设置小标题
         tvGoodsHeaderPrice.setText("￥"+mInnerDatas.SalePrice);//设置价格
         mHeaderDatas = mInnerDatas.Headers;
-        //设置轮播图
+        //设置ViewPager适配器
         mViewPager.setAdapter(new GoodsHeaderAdapter(GoodsDetailsActivity.this,mHeaderDatas));
         //添加小圆点
         for (int i=0;i<mHeaderDatas.size();i++) {

@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
     <RelativeLayout
-        android:padding="5dp"
+        android:padding="2dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
@@ -39,8 +39,9 @@
             android:textSize="16sp"
             android:textColor="#ffffff"
             android:background="#008b00"
+            android:layout_marginRight="10dp"
             android:layout_alignParentRight="true"
-            android:layout_width="140dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content" />
     </RelativeLayout>
 </LinearLayout>

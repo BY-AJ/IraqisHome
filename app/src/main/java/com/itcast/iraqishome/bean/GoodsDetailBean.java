@@ -19,17 +19,41 @@ public class GoodsDetailBean {
 
         public ArrayList<HeaderInfo> Headers;
         public ArrayList<BuyInfo> BuyWith;
+        public ArrayList<GroupInfo> GroupAttrs;
         public ArrayList<ServiceInfo> ServiceIcon;
         public ArrayList<DetailInfo> Details;
         public ArrayList<SpecInfo> Specifications;
     }
 
-    //头部图片信息类
+    /*********************头部图片信息类********************/
     public class HeaderInfo {
         public String ImageUrl;
     }
+    /********************************************************/
 
-    //还有更多可选信息类
+    /*************************种类属性信息类**********************/
+    public class GroupInfo {
+        public ArrayList<PropsInfo> props;
+        public String selSku;
+
+    }
+
+    public class PropsInfo{
+        public String pname;
+        public int pid;
+        public String descF5;
+        public int imgPrev;
+        public ArrayList<ValInfo> vals;
+    }
+
+    public class ValInfo{
+        public int vid;
+        public String vname;
+    }
+    /***************************************************************/
+
+
+    /*********************还有更多可选信息类*************************/
     public class BuyInfo{
         public float ActivityPrice;
         public String Appeal;
@@ -42,8 +66,9 @@ public class GoodsDetailBean {
         public float SalePrice;
         public String Uri;
     }
+    /***************************************************************/
 
-    //服务承诺信息类
+    /*******************服务承诺信息类******************************/
     public class ServiceInfo{
         public String ImageUrl;
         public int ImageHeight;
@@ -58,15 +83,18 @@ public class GoodsDetailBean {
         public int EndXP;
         public int EndYP;
     }
+    /***************************************************************/
 
-    //商品介绍信息类
+    /***********************商品介绍信息类**************************/
     public class DetailInfo {
         public String ImageUrl;
     }
+    /***************************************************************/
 
-    //规格参数信息类
+    /************************规格参数信息类************************/
     public class SpecInfo {
         public String Name;
         public String Value;
     }
+    /***************************************************************/
 }
