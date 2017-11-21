@@ -28,7 +28,7 @@ public class GoodsHeaderAdapter extends PagerAdapter{
 
     @Override
     public int getCount() {
-        return data.size();
+        return Integer.MAX_VALUE;
     }
 
     @Override
@@ -38,6 +38,7 @@ public class GoodsHeaderAdapter extends PagerAdapter{
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
+        position = position % data.size();
         ImageView view = new ImageView(context);
         view.setScaleType(ImageView.ScaleType.FIT_XY);
         Glide.with(context).load(ConstantUtil.IMAGE_BAISC+data.get(position).ImageUrl).into(view);

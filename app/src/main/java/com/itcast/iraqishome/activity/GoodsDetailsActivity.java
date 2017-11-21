@@ -6,12 +6,14 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.itcast.iraqishome.R;
 import com.itcast.iraqishome.adapter.GoodsHeaderAdapter;
 import com.itcast.iraqishome.bean.GoodsDetailBean;
 import com.itcast.iraqishome.net.RequestNetwork;
+import com.itcast.iraqishome.utills.UIUtils;
 import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
@@ -36,8 +38,10 @@ public class GoodsDetailsActivity extends BaseActivity{
     @BindView(R.id.tv_goods_header_name) TextView tvGoodsHeaderName;
     @BindView(R.id.tv_goods_header_appeal) TextView tvGoodsHeaderAppeal;
     @BindView(R.id.tv_goods_header_price) TextView tvGoodsHeaderPrice;
+    @BindView(R.id.ll_header_root) LinearLayout llHeaderRoot;
 
     private int mItemInfoId;
+    private int mPreiousPos;
     private GoodsDetailBean.EntityInfo mInnerDatas;
     private ArrayList<GoodsDetailBean.HeaderInfo> mHeaderDatas;
 
@@ -78,6 +82,64 @@ public class GoodsDetailsActivity extends BaseActivity{
         mHeaderDatas = mInnerDatas.Headers;
         //设置轮播图
         mViewPager.setAdapter(new GoodsHeaderAdapter(GoodsDetailsActivity.this,mHeaderDatas));
+        //添加小圆点
+        for (int i=0;i<mHeaderDatas.size();i++) {
+            ImageView point = new ImageView(this);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT
+                    , LinearLayout.LayoutParams.WRAP_CONTENT);
+            if(i == 0) {
+                point.setImageResource(R.drawable.shape_point_pressed);
+            }else {
+                point.setImageResource(R.drawable.shape_point_normal);
+                params.leftMargin = UIUtils.dip2px(10);
+                point.setLayoutParams(params);
+            }
+            llHeaderRoot.addView(point);
+        }
+        //开始轮播
+        startRotation();
+        //设置页面监听,实现小圆点的滚动
+        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+            @Override
+            public void onPageSelected(int position) {
+                //页面选中回调该方法
+                position = position%mHeaderDatas.size();
+                ImageView point = (ImageView) llHeaderRoot.getChildAt(position);
+                point.setImageResource(R.drawable.shape_point_pressed);
+                //上个点变为不选中
+                ImageView prePoint = (ImageView)llHeaderRoot.getChildAt(mPreiousPos);
+                prePoint.setImageResource(R.drawable.shape_point_normal);
+                mPreiousPos = position;
+            }
+            @Override
+            public void onPageScrollStateChanged(int state) {
+            }
+        });
+    }
+
+    private void startRotation() {
+        //设置页面从mAdDatas.size*10000位置开始滚动
+        mViewPager.setCurrentItem(mHeaderDatas.size()*10000);
+        //实现头条的轮播
+        new RunnableTask().start();
+    }
+
+    private class RunnableTask implements Runnable {
+        public void start() {
+            //每次开始的时候，清除之前的消息，避免消息的重复
+            UIUtils.getHandler().removeCallbacksAndMessages(null);
+            UIUtils.getHandler().postDelayed(this,3000);
+        }
+        @Override
+        public void run() {
+            int currentItem = mViewPager.getCurrentItem();
+            currentItem++;
+            mViewPager.setCurrentItem(currentItem);
+            UIUtils.getHandler().postDelayed(this,3000);
+        }
     }
 
     private void initBasic() {
