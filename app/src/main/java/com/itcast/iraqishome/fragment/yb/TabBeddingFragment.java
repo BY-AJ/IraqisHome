@@ -130,5 +130,6 @@ public class TabBeddingFragment extends BaseFragment{
                 R.layout.recycler_item_front_header,
                 mEntityList);
         mRecyclerFront.setAdapter(mFrontAdapter);
+
     }
 }

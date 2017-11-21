@@ -10,19 +10,19 @@ import android.widget.ScrollView;
  * Created by yb on 2017/11/19.
  */
 
-public class MyScrollview extends ScrollView{
+public class MyScrollView extends ScrollView{
     private int downX;
     private int downY;
     private int mTouchSlop;
-    public MyScrollview(Context context) {
+    public MyScrollView(Context context) {
         this(context,null);
     }
 
-    public MyScrollview(Context context, AttributeSet attrs) {
+    public MyScrollView(Context context, AttributeSet attrs) {
         this(context, attrs,-1);
      }
 
-     public MyScrollview(Context context, AttributeSet attrs, int defStyleAttr) {
+     public MyScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
           super(context, attrs, defStyleAttr);
           mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
      }

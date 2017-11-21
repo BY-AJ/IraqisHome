@@ -1,11 +1,14 @@
 package com.itcast.iraqishome.fragment.yb;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itcast.iraqishome.R;
+import com.itcast.iraqishome.activity.GoodsDetailsActivity;
 import com.itcast.iraqishome.adapter.TabProductRecycAdapter;
 import com.itcast.iraqishome.bean.TabProductBean;
 import com.itcast.iraqishome.fragment.BaseFragment;
@@ -64,5 +67,14 @@ public class TabProductFragment extends BaseFragment{
         mDatas = body.InnerData;
         mAdapter = new TabProductRecycAdapter(mDatas);
         mRecyclerView.setAdapter(mAdapter);
+
+        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(mActivity, GoodsDetailsActivity.class);
+                intent.putExtra("id",mDatas.get(position).ItemInfoId);
+                startActivity(intent);
+            }
+        });
     }
 }
