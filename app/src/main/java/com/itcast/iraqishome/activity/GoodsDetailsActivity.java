@@ -14,6 +14,7 @@ import com.itcast.iraqishome.adapter.GoodsHeaderAdapter;
 import com.itcast.iraqishome.bean.GoodsDetailBean;
 import com.itcast.iraqishome.net.RequestNetwork;
 import com.itcast.iraqishome.utills.UIUtils;
+import com.itcast.iraqishome.view.CountView;
 import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ public class GoodsDetailsActivity extends BaseActivity{
     @BindView(R.id.tv_goods_header_appeal) TextView tvGoodsHeaderAppeal;
     @BindView(R.id.tv_goods_header_price) TextView tvGoodsHeaderPrice;
     @BindView(R.id.ll_header_root) LinearLayout llHeaderRoot;
+    @BindView(R.id.countview) CountView mCountView;
 
     private int mItemInfoId;
     private int mPreiousPos;
@@ -48,6 +50,7 @@ public class GoodsDetailsActivity extends BaseActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         setContentView(R.layout.activity_goods);
 
         initBasic();//初始化基本信息
@@ -73,6 +76,8 @@ public class GoodsDetailsActivity extends BaseActivity{
         mInnerDatas = body.InnerData;
         //设置商品介绍头部信息
         setHeaderInfo();
+
+        Logger.d("数量："+mCountView.getCount());
     }
 
     private void setHeaderInfo() {

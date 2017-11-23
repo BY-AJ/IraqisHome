@@ -19,7 +19,7 @@ public class GoodsDetailBean {
 
         public ArrayList<HeaderInfo> Headers;
         public ArrayList<BuyInfo> BuyWith;
-        public ArrayList<GroupInfo> GroupAttrs;
+        //public ArrayList<GroupInfo> GroupAttrs;
         public ArrayList<ServiceInfo> ServiceIcon;
         public ArrayList<DetailInfo> Details;
         public ArrayList<SpecInfo> Specifications;
