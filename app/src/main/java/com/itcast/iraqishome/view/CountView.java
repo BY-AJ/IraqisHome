@@ -112,7 +112,7 @@ public class CountView extends LinearLayout implements View.OnClickListener,Text
         }
     }
 
-    public String getCount(){
-        return etAmount.getText().toString();
+    public int getCount(){
+        return mCount;
     }
 }

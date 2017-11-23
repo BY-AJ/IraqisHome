@@ -67,5 +67,4 @@
             android:layout_height="20dp" />
     </RelativeLayout>
 
-    <include layout="@layout/goods_group"/>
 </LinearLayout>

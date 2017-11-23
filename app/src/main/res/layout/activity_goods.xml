@@ -11,9 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <include layout="@layout/goods_header"/>
+            <include layout="@layout/goods_group"/>
         </LinearLayout>
     </com.itcast.iraqishome.view.MyScrollView>
 

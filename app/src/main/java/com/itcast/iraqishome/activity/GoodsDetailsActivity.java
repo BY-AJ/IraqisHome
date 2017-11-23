@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.itcast.iraqishome.R;
 import com.itcast.iraqishome.adapter.GoodsHeaderAdapter;
@@ -76,10 +77,11 @@ public class GoodsDetailsActivity extends BaseActivity{
         mInnerDatas = body.InnerData;
         //设置商品介绍头部信息
         setHeaderInfo();
-
-        Logger.d("数量："+mCountView.getCount());
     }
 
+    /**
+     * 设置商品头部信息
+     */
     private void setHeaderInfo() {
         tvGoodsHeaderName.setText(mInnerDatas.Name);//设置名称
         tvGoodsHeaderAppeal.setText(mInnerDatas.Caption);//设置小标题
@@ -125,6 +127,9 @@ public class GoodsDetailsActivity extends BaseActivity{
         });
     }
 
+    /**
+     * 实现轮播图的效果
+     */
     private void startRotation() {
         //设置页面从mAdDatas.size*10000位置开始滚动
         mViewPager.setCurrentItem(mHeaderDatas.size()*10000);
@@ -147,6 +152,17 @@ public class GoodsDetailsActivity extends BaseActivity{
         }
     }
 
+    /**
+     * 加入购物车
+     */
+    @OnClick(R.id.btn_shoppingCart)
+    public void addShoppingCart(){
+        Toast.makeText(this,mCountView.getCount()+"",Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 初始化基本信息
+     */
     private void initBasic() {
         ButterKnife.bind(this);
         Intent intent = getIntent();
@@ -155,6 +171,9 @@ public class GoodsDetailsActivity extends BaseActivity{
         ivToolbarBack.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * 返回上一个活动
+     */
     @OnClick(R.id.iv_toolbar_back)
     public void finshActivity(){
         finish();
