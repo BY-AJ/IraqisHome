@@ -22,6 +22,7 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".activity.GraspActivity"/>
         <activity android:name=".activity.GoodsDetailsActivity"/>
+        <activity android:name=".activity.WebDetailsActivity"/>
     </application>
 
 </manifest>

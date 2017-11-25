@@ -1,5 +1,6 @@
 package com.itcast.iraqishome.fragment;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -7,7 +8,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.itcast.iraqishome.R;
+import com.itcast.iraqishome.activity.WebDetailsActivity;
 import com.itcast.iraqishome.adapter.StrollRecycAdapter;
 import com.itcast.iraqishome.adapter.entity.StrollMultiItemEntity;
 import com.itcast.iraqishome.bean.StrollBean;
@@ -29,13 +33,14 @@ import retrofit2.Response;
  * Created by yb on 2017/11/14.
  */
 
-public class StrollFragment extends BaseFragment{
+public class StrollFragment extends BaseFragment implements View.OnClickListener{
     @BindView(R.id.recycler_stroll) RecyclerView mRecyclerView;
     @BindView(R.id.tv_toolbar_title) TextView tvToolbarTitle;
     @BindView(R.id.iv_toolbar_category)ImageView ivToolbarCategory;
     private ArrayList<StrollBean.ListInfo> mStrollList;
     private List<StrollMultiItemEntity> mData;
     private StrollRecycAdapter mAdapter;
+    private ArrayList<StrollBean.ConfigerInfo> mConfigerList;
 
     @Override
     public View initView() {
@@ -71,7 +76,9 @@ public class StrollFragment extends BaseFragment{
     private void parseData(StrollBean body) {
         Logger.d("闲逛:"+body.Message+".."+body.InnerData.StrollList.size());
         mStrollList = body.InnerData.StrollList;
+        mConfigerList = mStrollList.get(1).ConfigerList;
         mData = new ArrayList<>();
+        //对数据进行分类设置
         for (int i=0;i<mStrollList.size();i++) {
             StrollBean.ListInfo info = mStrollList.get(i);
             if(info.Type == 3) {
@@ -82,5 +89,51 @@ public class StrollFragment extends BaseFragment{
         }
         mAdapter = new StrollRecycAdapter(mData);
         mRecyclerView.setAdapter(mAdapter);
+
+        //configerlist中的各点击事件处理
+        initConfiger();
+    }
+
+    private void initConfiger() {
+        mRecyclerView.addOnItemTouchListener(new OnItemChildClickListener() {
+            @Override
+            public void onSimpleItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                //获取item中的子控件
+                adapter.getViewByPosition(mRecyclerView,position, R.id.btn_stroll1)
+                        .setOnClickListener(StrollFragment.this);
+                adapter.getViewByPosition(mRecyclerView,position, R.id.btn_stroll2)
+                        .setOnClickListener(StrollFragment.this);
+                adapter.getViewByPosition(mRecyclerView,position, R.id.btn_stroll3)
+                        .setOnClickListener(StrollFragment.this);
+                adapter.getViewByPosition(mRecyclerView,position, R.id.btn_stroll4)
+                        .setOnClickListener(StrollFragment.this);
+                adapter.getViewByPosition(mRecyclerView,position, R.id.btn_stroll5)
+                        .setOnClickListener(StrollFragment.this);
+            }
+        });
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = null;
+        switch (view.getId()) {
+            case R.id.btn_stroll1:
+                intent = new Intent(mActivity, WebDetailsActivity.class);
+                intent.putExtra("url",mConfigerList.get(0).LinkUrl);
+                intent.putExtra("title","49元包1年洗衣液");
+                startActivity(intent);
+                break;
+            case R.id.btn_stroll2:
+                break;
+            case R.id.btn_stroll3:
+            case R.id.btn_stroll4:
+                intent = new Intent(mActivity, WebDetailsActivity.class);
+                intent.putExtra("url",mConfigerList.get(2).LinkUrl);
+                intent.putExtra("title","伊人家居");
+                startActivity(intent);
+                break;
+            case R.id.btn_stroll5:
+                break;
+        }
     }
 }

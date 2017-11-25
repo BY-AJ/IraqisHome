@@ -55,6 +55,12 @@ public class StrollRecycAdapter extends BaseMultiItemQuickAdapter<StrollMultiIte
         for (int i=0;i<item.getInfo().ConfigerList.size();i++) {
             btn[i].setText(item.getInfo().ConfigerList.get(i).Title);
         }
+
+        helper.addOnClickListener(R.id.btn_stroll1)
+                .addOnClickListener(R.id.btn_stroll2)
+                .addOnClickListener(R.id.btn_stroll3)
+                .addOnClickListener(R.id.btn_stroll4)
+                .addOnClickListener(R.id.btn_stroll5);
     }
 
     private void loadImage(BaseViewHolder helper, StrollMultiItemEntity item) {
