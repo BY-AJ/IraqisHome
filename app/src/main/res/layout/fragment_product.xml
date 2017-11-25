@@ -7,39 +7,40 @@
 
     <include layout="@layout/my_toolbar"/>
 
-    <LinearLayout
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <EditText
-            android:id="@+id/et_product_search"
-            android:padding="5dp"
-            android:drawableLeft="@drawable/ic_tab_category_selected"
-            android:drawablePadding="10dp"
-            android:hint="搜索商品"
-            android:background="@drawable/shape_search"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn_product_cancel"
-            android:text="取消"
-            android:visibility="gone"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:textSize="16sp"
-            android:background="@null"
-            android:textColor="#32CD32"
-            android:layout_width="35dp"
-            android:layout_height="25dp" />
-    </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--<EditText-->
+            <!--android:id="@+id/et_product_search"-->
+            <!--android:padding="5dp"-->
+            <!--android:drawableLeft="@drawable/ic_tab_category_selected"-->
+            <!--android:drawablePadding="10dp"-->
+            <!--android:hint="搜索商品"-->
+            <!--android:background="@drawable/shape_search"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<Button-->
+            <!--android:id="@+id/btn_product_cancel"-->
+            <!--android:text="取消"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:textSize="16sp"-->
+            <!--android:background="@null"-->
+            <!--android:textColor="#32CD32"-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="25dp" />-->
+    <!--</LinearLayout>-->
 
     <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="5dp"
         android:id="@+id/recycler_product"
+        android:overScrollMode="never"
+        android:fadingEdge="none"
         android:background="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

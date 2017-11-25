@@ -4,8 +4,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,8 +33,8 @@ public class ProductFragment extends BaseFragment{
     @BindView(R.id.recycler_product) RecyclerView mRecyclerView;
     @BindView(R.id.tv_toolbar_title) TextView tvToolbarTitle;
     @BindView(R.id.iv_toolbar_category)ImageView ivToolbarCategory;
-    @BindView(R.id.et_product_search) EditText etProductSearch;
-    @BindView(R.id.btn_product_cancel) Button btnProductCancel;
+//    @BindView(R.id.et_product_search) EditText etProductSearch;
+//    @BindView(R.id.btn_product_cancel) Button btnProductCancel;
     private ArrayList<CategoryBean.ChildInfo> mInnerData;
     private ProductRecycAdapter mAdapter;
 

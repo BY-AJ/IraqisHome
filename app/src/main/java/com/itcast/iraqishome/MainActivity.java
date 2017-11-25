@@ -1,6 +1,7 @@
 package com.itcast.iraqishome;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.RadioGroup;
 
 import com.itcast.iraqishome.activity.BaseActivity;
@@ -19,6 +20,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         setContentView(R.layout.activity_main);
         //初始化基本信息
         initBasic();
