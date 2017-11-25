@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +43,8 @@ public class GoodsDetailsActivity extends BaseActivity{
     @BindView(R.id.tv_goods_header_price) TextView tvGoodsHeaderPrice;
     @BindView(R.id.ll_header_root) LinearLayout llHeaderRoot;
     @BindView(R.id.countview) CountView mCountView;
+    @BindView(R.id.rl_group_points) RelativeLayout rlGroupPoints;
+    @BindView(R.id.ll_group_local) LinearLayout llGroupLocal;
 
     private int mItemInfoId;
     private int mPreiousPos;
@@ -75,12 +78,21 @@ public class GoodsDetailsActivity extends BaseActivity{
     private void parseData(GoodsDetailBean body) {
         Logger.d(body.Message+".."+body.Status+"..."+body.Result);
         mInnerDatas = body.InnerData;
-        //设置商品介绍头部信息
+        //设置Header信息
         setHeaderInfo();
+        //设置groupAttrs信息
+        setGroupAttr();
     }
 
     /**
-     * 设置商品头部信息
+     * 处理购买地址信息逻辑
+     */
+    private void setGroupAttr() {
+
+    }
+
+    /**
+     * 处理商品头部信息逻辑
      */
     private void setHeaderInfo() {
         tvGoodsHeaderName.setText(mInnerDatas.Name);//设置名称
