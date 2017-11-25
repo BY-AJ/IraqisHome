@@ -32,7 +32,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         //1.设置适配器
         mViewPager.setAdapter(new MainAdapter(getSupportFragmentManager()));
         //2.设置Viewpager缓存页数
-        mViewPager.setOffscreenPageLimit(4);
+        mViewPager.setOffscreenPageLimit(5);
         //3.设置Radiogruop监听器
         mRadioGroup.setOnCheckedChangeListener(this);
         //4.设置默认第一个RadioButton选中

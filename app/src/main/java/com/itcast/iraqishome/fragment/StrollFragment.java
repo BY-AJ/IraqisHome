@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
@@ -117,22 +118,26 @@ public class StrollFragment extends BaseFragment implements View.OnClickListener
     public void onClick(View view) {
         Intent intent = null;
         switch (view.getId()) {
-            case R.id.btn_stroll1:
+            case R.id.btn_stroll1://49元包一年
                 intent = new Intent(mActivity, WebDetailsActivity.class);
                 intent.putExtra("url",mConfigerList.get(0).LinkUrl);
                 intent.putExtra("title","49元包1年洗衣液");
                 startActivity(intent);
                 break;
-            case R.id.btn_stroll2:
+            case R.id.btn_stroll2://今日新品
+                Toast.makeText(UIUtils.getContext(),"暂时出现问题，请稍等",Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.btn_stroll3:
-            case R.id.btn_stroll4:
+            case R.id.btn_stroll3://幸运抽奖
+            case R.id.btn_stroll4://幸运抽奖
                 intent = new Intent(mActivity, WebDetailsActivity.class);
                 intent.putExtra("url",mConfigerList.get(2).LinkUrl);
                 intent.putExtra("title","伊人家居");
                 startActivity(intent);
                 break;
-            case R.id.btn_stroll5:
+            case R.id.btn_stroll5://限时特惠
+//                intent = new Intent(mActivity,LimitedActivity.class);
+//                startActivity(intent);
+                Toast.makeText(UIUtils.getContext(),"暂时出现问题，请稍等",Toast.LENGTH_SHORT).show();
                 break;
         }
     }

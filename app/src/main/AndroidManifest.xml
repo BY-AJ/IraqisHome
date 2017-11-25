@@ -23,6 +23,7 @@
         <activity android:name=".activity.GraspActivity"/>
         <activity android:name=".activity.GoodsDetailsActivity"/>
         <activity android:name=".activity.WebDetailsActivity"/>
+        <activity android:name=".activity.LimitedActivity"/>
     </application>
 
 </manifest>

@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * 网页页面展示
+ * 网页展示
  * Created by yb on 2017/11/25.
  */
 
