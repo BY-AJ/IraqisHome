@@ -8,10 +8,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.itcast.iraqishome.R;
+import com.itcast.iraqishome.adapter.StrollRecycAdapter;
+import com.itcast.iraqishome.adapter.entity.StrollMultiItemEntity;
 import com.itcast.iraqishome.bean.StrollBean;
 import com.itcast.iraqishome.net.RequestNetwork;
 import com.itcast.iraqishome.utills.UIUtils;
 import com.orhanobut.logger.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,6 +33,9 @@ public class StrollFragment extends BaseFragment{
     @BindView(R.id.recycler_stroll) RecyclerView mRecyclerView;
     @BindView(R.id.tv_toolbar_title) TextView tvToolbarTitle;
     @BindView(R.id.iv_toolbar_category)ImageView ivToolbarCategory;
+    private ArrayList<StrollBean.ListInfo> mStrollList;
+    private List<StrollMultiItemEntity> mData;
+    private StrollRecycAdapter mAdapter;
 
     @Override
     public View initView() {
@@ -62,5 +70,17 @@ public class StrollFragment extends BaseFragment{
 
     private void parseData(StrollBean body) {
         Logger.d("闲逛:"+body.Message+".."+body.InnerData.StrollList.size());
+        mStrollList = body.InnerData.StrollList;
+        mData = new ArrayList<>();
+        for (int i=0;i<mStrollList.size();i++) {
+            StrollBean.ListInfo info = mStrollList.get(i);
+            if(info.Type == 3) {
+                mData.add(new StrollMultiItemEntity(3,info));
+            }else if(info.Type == 1) {
+                mData.add(new StrollMultiItemEntity(1,info));
+            }
+        }
+        mAdapter = new StrollRecycAdapter(mData);
+        mRecyclerView.setAdapter(mAdapter);
     }
 }
