@@ -9,4 +9,6 @@ public class ConstantUtil {
      * 图片加载的基地址
      */
     public static final String IMAGE_BAISC ="http://i.lifevccdn.com";
+
+    public static final String STROLL_BASIC="http://newapi.lifevc.com/1.0/v_and_5.1.2_33/";
 }

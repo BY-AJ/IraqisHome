@@ -5,7 +5,6 @@ import com.itcast.iraqishome.fragment.yb.HomeFragment;
 import com.itcast.iraqishome.fragment.yb.TabBeddingFragment;
 import com.itcast.iraqishome.fragment.yb.TabCookFragment;
 import com.itcast.iraqishome.fragment.yb.TabGraspFragment;
-import com.itcast.iraqishome.fragment.yb.TabHomeFragment;
 import com.itcast.iraqishome.fragment.yb.TabLifeFragment;
 import com.itcast.iraqishome.fragment.yb.TabProductFragment;
 import com.itcast.iraqishome.fragment.yb.TabSuitFragment;
@@ -58,7 +57,7 @@ public class FragmentFactory {
         if(fragment == null) {
             switch (pos) {
                 case 0:
-                    fragment = new TabHomeFragment();
+                    fragment = new TabProductFragment();
                     break;
                 case 1:
                     fragment = new TabProductFragment();
