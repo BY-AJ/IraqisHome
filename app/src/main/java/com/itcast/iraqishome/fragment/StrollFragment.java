@@ -13,6 +13,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.itcast.iraqishome.R;
 import com.itcast.iraqishome.activity.GoodsDetailsActivity;
+import com.itcast.iraqishome.activity.LimitedActivity;
 import com.itcast.iraqishome.activity.WebDetailsActivity;
 import com.itcast.iraqishome.adapter.StrollRecycAdapter;
 import com.itcast.iraqishome.adapter.entity.StrollMultiItemEntity;
@@ -148,9 +149,9 @@ public class StrollFragment extends BaseFragment implements View.OnClickListener
                 startActivity(intent);
                 break;
             case R.id.btn_stroll5://限时特惠
-                //intent = new Intent(mActivity,LimitedActivity.class);
-                //startActivity(intent);
-                Toast.makeText(UIUtils.getContext(),"暂时出现问题,程序猿正在路上...",Toast.LENGTH_SHORT).show();
+                intent = new Intent(mActivity,LimitedActivity.class);
+                startActivity(intent);
+                //Toast.makeText(UIUtils.getContext(),"暂时出现问题,程序猿正在路上...",Toast.LENGTH_SHORT).show();
                 break;
         }
     }

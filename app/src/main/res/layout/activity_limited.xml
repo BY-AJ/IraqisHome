@@ -9,6 +9,7 @@
 
     <ImageView
         android:background="@drawable/x_bg"
+        android:scaleType="fitXY"
         android:id="@+id/iv_limited_banner"
         android:layout_width="match_parent"
         android:layout_height="160dp" />
@@ -16,6 +17,7 @@
     <android.support.v7.widget.RecyclerView
         android:layout_marginTop="5dp"
         android:id="@+id/recycler_limited"
+        android:background="#ffffff"
         android:overScrollMode="never"
         android:fadingEdge="none"
         android:layout_width="match_parent"

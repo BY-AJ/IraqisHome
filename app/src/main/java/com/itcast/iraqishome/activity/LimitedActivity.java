@@ -8,10 +8,16 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.itcast.iraqishome.R;
+import com.itcast.iraqishome.adapter.LimitedRecycAdapter;
 import com.itcast.iraqishome.bean.LimitedDetailBean;
 import com.itcast.iraqishome.net.RequestNetwork;
+import com.itcast.iraqishome.utills.ConstantUtil;
 import com.orhanobut.logger.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,6 +37,10 @@ public class LimitedActivity extends BaseActivity{
     @BindView(R.id.iv_toolbar_back) ImageView ivToolbarBack;
     @BindView(R.id.iv_limited_banner) ImageView ivLimitedBanner;
     @BindView(R.id.recycler_limited) RecyclerView mRecyclerView;
+    private ArrayList<LimitedDetailBean.BannerInfo> mBannerDatas;
+    private ArrayList<LimitedDetailBean.ItemInfo> mItemDatas;
+    private List<LimitedDetailBean.ItemInfo> mDatas;
+    private LimitedRecycAdapter mAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,7 +76,24 @@ public class LimitedActivity extends BaseActivity{
     }
 
     private void parseData(LimitedDetailBean body) {
-        Logger.d("限时特惠:"+body.InnerData.HeaderBanners.size());
+        Logger.d("限时特惠:"+body.InnerData.HeaderBanners.size()+"..."+body.InnerData.Shelves.size());
+        mBannerDatas = body.InnerData.HeaderBanners;
+        mItemDatas = body.InnerData.Shelves.get(0).Items;
+        //加载banner
+        initLoadBanner();
+        //初始化适配器
+        mDatas = new ArrayList<>();
+        for (int i=0;i<mItemDatas.size();i++) {
+            mDatas.add(mItemDatas.get(i));
+        }
+        mAdapter = new LimitedRecycAdapter(mDatas);
+        mRecyclerView.setAdapter(mAdapter);
+    }
+
+    private void initLoadBanner() {
+        Glide.with(this)
+                .load(ConstantUtil.IMAGE_BAISC+mBannerDatas.get(0).ImageUrl)
+                .into(ivLimitedBanner);
     }
 
 
