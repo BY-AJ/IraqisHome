@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/my_toolbar"/>
+
+    <RelativeLayout
+        android:background="#ededed"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+        <ImageView
+            android:id="@+id/iv_shop_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/shopping_cart_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_shop_des"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/iv_shop_icon"
+            android:layout_marginTop="10dp"
+            android:textColor="#ff000000"
+            android:textSize="18sp"
+            android:text="您的购物车还是空荡荡的"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_shop_stroll"
+            android:layout_below="@+id/tv_shop_des"
+            android:layout_centerHorizontal="true"
+            android:text="赶紧去逛逛"
+            android:textColor="#a2CD5a"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_shop_btn_bg"
+            android:layout_width="95dp"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:textColor="#000000"
+        android:padding="10dp"
+        android:text="Rico.S为你精心推荐"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <View
+        android:background="#ededed"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_shop"
+        android:overScrollMode="never"
+        android:layout_marginTop="10dp"
+        android:fadingEdge="none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

@@ -53,4 +53,8 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
             }
         }
     }
+
+    public NoScrollViewPager getViewPager(){
+        return mViewPager;
+    }
 }
