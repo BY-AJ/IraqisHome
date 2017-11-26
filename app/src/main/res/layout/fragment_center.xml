@@ -1,44 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.itcast.iraqishome.view.MyScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:overScrollMode="never"
-    android:fadingEdge="none"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <include layout="@layout/my_toolbar"/>
+
+    <com.itcast.iraqishome.view.MyScrollView
+        android:overScrollMode="never"
+        android:fadingEdge="none"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <include layout="@layout/my_toolbar"/>
-
-        <RelativeLayout
-            android:background="@drawable/lb_bg"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="#ededed"
             android:layout_width="match_parent"
-            android:layout_height="100dp">
-            <TextView
-                android:id="@+id/tv_center_des"
-                android:text="您还未登录"
-                android:layout_marginTop="20dp"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:layout_centerHorizontal="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <Button
-                android:id="@+id/btn_center_login"
-                android:text="登录/注册"
-                android:textColor="#a2CD5a"
-                android:layout_marginTop="10dp"
-                android:background="#ffffff"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/tv_center_des"
-                android:layout_width="80dp"
-                android:layout_height="30dp" />
-        </RelativeLayout>
+            android:layout_height="match_parent">
 
-        <include layout="@layout/pay_block"/>
+            <RelativeLayout
+                android:background="@drawable/lb_bg"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+                <TextView
+                    android:id="@+id/tv_center_des"
+                    android:text="您还未登录"
+                    android:layout_marginTop="20dp"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/btn_center_login"
+                    android:text="登录/注册"
+                    android:textColor="#a2CD5a"
+                    android:layout_marginTop="10dp"
+                    android:background="#ffffff"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/tv_center_des"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp" />
+            </RelativeLayout>
 
-    </LinearLayout>
+            <include layout="@layout/pay_block"/>
 
-</com.itcast.iraqishome.view.MyScrollView>
+            <include layout="@layout/recycler_item_center"/>
+
+            <RelativeLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_center_item1"
+                    android:background="#ffffff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_center_item2"
+                    android:background="#ffffff"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </com.itcast.iraqishome.view.MyScrollView>
+
+
+</LinearLayout>

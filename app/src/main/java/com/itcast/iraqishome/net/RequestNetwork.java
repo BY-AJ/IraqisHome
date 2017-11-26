@@ -1,6 +1,7 @@
 package com.itcast.iraqishome.net;
 
 import com.itcast.iraqishome.bean.CategoryBean;
+import com.itcast.iraqishome.bean.CenterBean;
 import com.itcast.iraqishome.bean.GoodsDetailBean;
 import com.itcast.iraqishome.bean.LimitedDetailBean;
 import com.itcast.iraqishome.bean.ShopBean;
@@ -113,6 +114,16 @@ public class RequestNetwork {
                 .client(httpClient.build())
                 .build();
         ShopClient client = retrofit.create(ShopClient.class);
+        return client.getDataForServer();
+    }
+
+    public static Call<CenterBean> getCenterClient(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(APP_URL)
+                .addConverterFactory(gsonConverterFactory)
+                .client(httpClient.build())
+                .build();
+        CenterClient client = retrofit.create(CenterClient.class);
         return client.getDataForServer();
     }
 }

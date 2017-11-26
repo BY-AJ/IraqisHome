@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_center_menu"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_center_icon"
+            android:src="@drawable/todelivered"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_center_menu"
+            android:layout_toRightOf="@+id/iv_center_icon"
+            android:text="我的菜单"
+            android:textSize="16sp"
+            android:textColor="#1a1a1a"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/news_cate_arr"
+            android:layout_width="15dp"
+            android:layout_height="15dp" />
+    </RelativeLayout>
+    <View
+        android:background="#ededed"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+</LinearLayout>
