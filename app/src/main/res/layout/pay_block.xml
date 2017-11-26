@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:padding="5dp"
+        android:divider="@drawable/divider"
+        android:showDividers="middle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rl_center_pay"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_pic1"
+                android:layout_centerVertical="true"
+                android:background="@drawable/topaid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="待支付"
+                android:textColor="#1a1a1a"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/iv_pic1"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_center_delive"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_pic2"
+                android:layout_centerVertical="true"
+                android:background="@drawable/todelivered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="待发货"
+                android:textColor="#1a1a1a"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/iv_pic2"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_center_receive"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_pic3"
+                android:layout_centerVertical="true"
+                android:background="@drawable/toreceived"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="待收货"
+                android:textColor="#1a1a1a"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/iv_pic3"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:background="#ededed"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:padding="5dp"
+        android:divider="@drawable/divider"
+        android:showDividers="middle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rl_center_comment"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_pic4"
+                android:layout_centerVertical="true"
+                android:background="@drawable/tocommented"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="待评论"
+                android:textColor="#1a1a1a"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/iv_pic4"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_center_reply"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_pic5"
+                android:layout_centerVertical="true"
+                android:background="@drawable/reply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="回复"
+                android:textColor="#1a1a1a"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/iv_pic5"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_center_return"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_pic6"
+                android:layout_centerVertical="true"
+                android:background="@drawable/returns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="退换货"
+                android:textColor="#1a1a1a"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/iv_pic6"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:background="#ededed"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+</LinearLayout>

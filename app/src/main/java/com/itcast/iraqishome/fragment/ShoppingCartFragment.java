@@ -1,5 +1,6 @@
 package com.itcast.iraqishome.fragment;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,8 +9,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itcast.iraqishome.MainActivity;
 import com.itcast.iraqishome.R;
+import com.itcast.iraqishome.activity.GoodsDetailsActivity;
 import com.itcast.iraqishome.adapter.ShopRecycAdapter;
 import com.itcast.iraqishome.bean.ShopBean;
 import com.itcast.iraqishome.net.RequestNetwork;
@@ -104,6 +107,15 @@ public class ShoppingCartFragment extends BaseFragment{
         }
         mAdapter = new ShopRecycAdapter(mDatas);
         mRecyclerView.setAdapter(mAdapter);
+
+        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(UIUtils.getContext(), GoodsDetailsActivity.class);
+                intent.putExtra("id",mRecommendDatas.get(position).ItemInfoId);
+                startActivity(intent);
+            }
+        });
     }
 
 }
