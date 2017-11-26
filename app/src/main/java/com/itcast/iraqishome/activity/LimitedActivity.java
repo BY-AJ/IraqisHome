@@ -97,6 +97,7 @@ public class LimitedActivity extends BaseActivity{
                 Intent intent = new Intent(LimitedActivity.this, GoodsDetailsActivity.class);
                 intent.putExtra("id",mItemDatas.get(position).ItemInfoId);
                 startActivity(intent);
+                finish();
             }
         });
     }

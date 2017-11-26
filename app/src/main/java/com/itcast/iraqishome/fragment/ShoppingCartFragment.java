@@ -43,6 +43,7 @@ public class ShoppingCartFragment extends BaseFragment{
     private MainActivity activity;
     private ArrayList<ShopBean.EntityInfo> mRecommendDatas;
     private ShopRecycAdapter mAdapter;
+    private NoScrollViewPager viewPager;
 
     @Override
     public View initView() {
@@ -53,6 +54,10 @@ public class ShoppingCartFragment extends BaseFragment{
 
     private void initBasic(View view) {
         ButterKnife.bind(this,view);
+        //获取依赖的Activity中的控件
+        activity = (MainActivity)mActivity;
+        viewPager = activity.getViewPager();
+
         tvToolbarTitle.setText("购物车");
         ivToolbarCategory.setVisibility(View.GONE);
         ivToolbarBack.setVisibility(View.VISIBLE);
@@ -65,11 +70,14 @@ public class ShoppingCartFragment extends BaseFragment{
 
     @OnClick(R.id.iv_toolbar_back)
     public void backPreActivity(){
-        activity = (MainActivity)mActivity;
-        NoScrollViewPager viewPager = activity.getViewPager();
         int currentItem = viewPager.getCurrentItem();
         currentItem--;
         viewPager.setCurrentItem(currentItem);
+    }
+
+    @OnClick(R.id.btn_shop_stroll)
+    public void stroll(){
+        viewPager.setCurrentItem(0);
     }
 
     @Override
@@ -97,6 +105,5 @@ public class ShoppingCartFragment extends BaseFragment{
         mAdapter = new ShopRecycAdapter(mDatas);
         mRecyclerView.setAdapter(mAdapter);
     }
-
 
 }
