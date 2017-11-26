@@ -57,7 +57,7 @@ public class GoodsDetailBean {
     public class BuyInfo{
         public float ActivityPrice;
         public String Appeal;
-        public int Code;
+        public long Code;
         public int CommentCount;
         public String ImageUrl;
         public int ItemInfoId;

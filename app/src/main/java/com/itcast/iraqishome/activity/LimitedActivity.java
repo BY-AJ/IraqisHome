@@ -1,5 +1,6 @@
 package com.itcast.iraqishome.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.itcast.iraqishome.R;
 import com.itcast.iraqishome.adapter.LimitedRecycAdapter;
 import com.itcast.iraqishome.bean.LimitedDetailBean;
@@ -88,6 +90,15 @@ public class LimitedActivity extends BaseActivity{
         }
         mAdapter = new LimitedRecycAdapter(mDatas);
         mRecyclerView.setAdapter(mAdapter);
+
+        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(LimitedActivity.this, GoodsDetailsActivity.class);
+                intent.putExtra("id",mItemDatas.get(position).ItemInfoId);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initLoadBanner() {
