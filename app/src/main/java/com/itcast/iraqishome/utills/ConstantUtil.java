@@ -15,4 +15,9 @@ public class ConstantUtil {
      */
     public static final String STROLL_BASIC="http://newapi.lifevc.com/1.0/v_and_5.1.2_33/";
 
+    /**
+     * 购物车基地址
+     */
+    public static final String SHOP_BASIC="http://marketing.lifevc.com/v1/";
+
 }

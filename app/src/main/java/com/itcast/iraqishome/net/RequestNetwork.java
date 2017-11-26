@@ -3,6 +3,7 @@ package com.itcast.iraqishome.net;
 import com.itcast.iraqishome.bean.CategoryBean;
 import com.itcast.iraqishome.bean.GoodsDetailBean;
 import com.itcast.iraqishome.bean.LimitedDetailBean;
+import com.itcast.iraqishome.bean.ShopBean;
 import com.itcast.iraqishome.bean.StrollBean;
 import com.itcast.iraqishome.bean.TabHomeBean;
 import com.itcast.iraqishome.bean.TabProductBean;
@@ -97,11 +98,21 @@ public class RequestNetwork {
 
     public static Call<LimitedDetailBean> getLimitedClient(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(ConstantUtil.STROLL_BASIC)
+                .baseUrl(APP_URL)
                 .addConverterFactory(gsonConverterFactory)
                 .client(httpClient.build())
                 .build();
         LimitedClient client = retrofit.create(LimitedClient.class);
+        return client.getDataForServer();
+    }
+
+    public static Call<ShopBean> getShopClient(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(ConstantUtil.SHOP_BASIC)
+                .addConverterFactory(gsonConverterFactory)
+                .client(httpClient.build())
+                .build();
+        ShopClient client = retrofit.create(ShopClient.class);
         return client.getDataForServer();
     }
 }
