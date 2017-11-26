@@ -42,6 +42,8 @@ public class MyScrollView extends ScrollView{
                 }
         }
         return super.onInterceptTouchEvent(e);
+
+        //...
     }
 
 }
