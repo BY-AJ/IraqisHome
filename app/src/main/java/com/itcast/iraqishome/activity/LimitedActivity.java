@@ -10,11 +10,15 @@ import android.widget.TextView;
 
 import com.itcast.iraqishome.R;
 import com.itcast.iraqishome.bean.LimitedDetailBean;
+import com.itcast.iraqishome.net.RequestNetwork;
 import com.orhanobut.logger.Logger;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * 限时特惠
@@ -48,17 +52,17 @@ public class LimitedActivity extends BaseActivity{
 
     private void initData() {
         //TODO 出现问题了
-//        Call<LimitedDetailBean> call = RequestNetwork.getLimitedClient();
-//        call.enqueue(new Callback<LimitedDetailBean>() {
-//            @Override
-//            public void onResponse(Call<LimitedDetailBean> call, Response<LimitedDetailBean> response) {
-//                parseData(response.body());
-//            }
-//            @Override
-//            public void onFailure(Call<LimitedDetailBean> call, Throwable t) {
-//                Logger.d(t.getMessage());
-//            }
-//        });
+        Call<LimitedDetailBean> call = RequestNetwork.getLimitedClient();
+        call.enqueue(new Callback<LimitedDetailBean>() {
+            @Override
+            public void onResponse(Call<LimitedDetailBean> call, Response<LimitedDetailBean> response) {
+                parseData(response.body());
+            }
+            @Override
+            public void onFailure(Call<LimitedDetailBean> call, Throwable t) {
+                Logger.d(t.getMessage());
+            }
+        });
     }
 
     private void parseData(LimitedDetailBean body) {

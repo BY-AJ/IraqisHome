@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.itcast.iraqishome.R;
+import com.itcast.iraqishome.activity.GoodsDetailsActivity;
 import com.itcast.iraqishome.activity.WebDetailsActivity;
 import com.itcast.iraqishome.adapter.StrollRecycAdapter;
 import com.itcast.iraqishome.adapter.entity.StrollMultiItemEntity;
@@ -93,6 +94,18 @@ public class StrollFragment extends BaseFragment implements View.OnClickListener
 
         //configerlist中的各点击事件处理
         initConfiger();
+        //列表点击事件处理
+        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                if(position == 1) {
+                    return;
+                }
+                Intent intent = new Intent(UIUtils.getContext(), GoodsDetailsActivity.class);
+                intent.putExtra("id",mStrollList.get(position).ItemInfoID);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initConfiger() {
@@ -125,7 +138,7 @@ public class StrollFragment extends BaseFragment implements View.OnClickListener
                 startActivity(intent);
                 break;
             case R.id.btn_stroll2://今日新品
-                Toast.makeText(UIUtils.getContext(),"暂时出现问题，请稍等",Toast.LENGTH_SHORT).show();
+                Toast.makeText(UIUtils.getContext(),"暂时出现问题,程序猿正在路上...",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_stroll3://幸运抽奖
             case R.id.btn_stroll4://幸运抽奖
@@ -135,9 +148,9 @@ public class StrollFragment extends BaseFragment implements View.OnClickListener
                 startActivity(intent);
                 break;
             case R.id.btn_stroll5://限时特惠
-//                intent = new Intent(mActivity,LimitedActivity.class);
-//                startActivity(intent);
-                Toast.makeText(UIUtils.getContext(),"暂时出现问题，请稍等",Toast.LENGTH_SHORT).show();
+                //intent = new Intent(mActivity,LimitedActivity.class);
+                //startActivity(intent);
+                Toast.makeText(UIUtils.getContext(),"暂时出现问题,程序猿正在路上...",Toast.LENGTH_SHORT).show();
                 break;
         }
     }
